@@ -16,7 +16,7 @@ This project will interrogate the dataset to answer three critical business ques
 
 ## 🧹 Data Cleaning & Standardisation
 
-A structured data cleaning process was executed in Microsoft Excel to transform the raw, messy transaction records into a reliable dataset for business intelligence. Below is the documentation of the steps taken:
+A structured data cleaning process was executed in Google Sheets to transform the raw, messy transaction records into a reliable dataset for business intelligence. Below is the documentation of the steps taken:
 
 1. **Column Width & UI Adjustment:** Fixed text truncating errors, specifically in the `InvoiceDate` column, ensuring all tracking points are completely visible.
 2. **Deduplication:** Identified and permanently removed duplicate transactional entries (e.g., duplicated rows for `HAND WARMER UNION JACK` and `JUMBO BAG TOY DESIGN`) to protect data integrity.
