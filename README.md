@@ -1,27 +1,43 @@
-# 📊 E-commerce Sales Performance & Insights Analysis
+# 📊 Interactive Supply Chain Sales Analytics Dashboard
 
-## 🎯 Project Overview
-This project takes on the role of a Data Analyst to investigate an e-commerce sales dataset. The goal is to uncover hidden trends, identify high-value customer segments, and provide data-driven recommendations to boost overall profitability.
+A live, interactive data analytics dashboard built to monitor product performance, track sales distribution, and uncover high-value revenue drivers for business stakeholders.
 
-## 💼 The Business Problem & Objectives
-This project will interrogate the dataset to answer three critical business questions:
-1. **Product Performance:** Which product categories drive 80% of the revenue, and which items are lagging?
-2. **Customer Behavior:** What is the average order value (AOV) and regional sales trends?
-3. **Sales Metrics:** Which months or seasons show the highest sales peaks?
+🔗 **Live Dashboard Link:** [View Live Streamlit App](https://ecommercesalesproject-3ibosnua2smzadablakeiv.streamlit.app/)
 
-## 🛠️ Planned Tech Stack
-* **Data Cleaning:** Google Sheets
-* **Data Interrogation:** SQL Queries
-* **Data Storytelling:** Dashboard Visualization
+---
 
-## 🧹 Data Cleaning & Standardisation
+## 🎯 Business Problem & Objective
+In e-commerce and retail supply chains, stockouts of high-revenue items lead to direct financial losses, while overstocking low-performing goods ties up working capital. 
 
-A structured data cleaning process was executed in Google Sheets to transform the raw, messy transaction records into a reliable dataset for business intelligence. Below is the documentation of the steps taken:
+The objective of this project is to provide supply chain managers and stakeholders with real-time visibility into product sales performance, enabling them to:
+* Identify top-performing products by revenue to prioritize inventory fulfillment.
+* Filter and analyze sales metrics dynamically across different regions.
+* Optimize stock allocation based on global demand patterns.
 
-1. **Column Width & UI Adjustment:** Fixed text truncating errors, specifically in the `InvoiceDate` column, ensuring all tracking points are completely visible.
-2. **Deduplication:** Identified and permanently removed duplicate transactional entries (e.g., duplicated rows for `HAND WARMER UNION JACK` and `JUMBO BAG TOY DESIGN`) to protect data integrity.
-3. **Text Standardisation:** Standardised the text formatting of the `Country` column using text alignment and proper casing. Inconsistencies like `UNITED KINGDOM` and `united kingdom` were unified into a single corporate format: `United Kingdom`.
-4. **Missing Values Imputation (Contextual Logic):**
-   * **InvoiceNo:** Successfully recovered missing invoice numbers (Rows 4 and 13) by reverse-engineering nearby patterns (matching identical `CustomerID` and `InvoiceDate` metrics).
-   * **CustomerID:** For transactions missing specific buyer IDs but retaining complete pricing and inventory metrics, the value was updated to `Guest` checkout to preserve revenue tracking data.
-5. **Data Dropping (Risk Mitigation):** Safely removed incomplete data records where critical analysis metrics like `Quantity` or `UnitPrice` were missing entirely. This maintains structural precision and prevents downstream analytical errors.
+---
+
+## 🛠️ Tech Stack & Skills Demonstrated
+* **Data Processing & Analytics:** Python, Pandas
+* **Data Visualization:** Plotly Express (Interactive Charts)
+* **Web Deployment:** Streamlit, Streamlit Cloud
+* **Version Control & DevOps:** Git, GitHub, CI/CD deployment workflows
+
+---
+
+## 💡 Key Business Insights Discovered
+1. **The Core Revenue Driver:** *"Jam Making Set With Jars"* is identified as the highest revenue-generating product, accounting for maximum individual sales. From a supply chain perspective, this item requires strict safety stock monitoring to mitigate stockout risks.
+2. **Regional Variations:** Sales density varies significantly across different countries, indicating that inventory placement should be localized closer to high-demand regions to optimize logistics costs and delivery speed.
+
+---
+
+## 📂 Project Structure
+```text
+ECOMMERCE_SALES_PROJECT/
+├── Analysis/
+│   └── sales_analysis.py       # Core data handling and exploration script
+├── Dashboard/
+│   └── Dashboard/
+│       └── app.py              # Main Streamlit web application code
+├── Data/                       # Raw and cleaned data storage
+├── requirements.txt            # Production dependencies for cloud deployment
+└── README.md                   # Professional project documentation
